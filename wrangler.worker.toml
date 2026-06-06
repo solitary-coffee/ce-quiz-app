@@ -1,0 +1,26 @@
+# ============================================================
+# ME2 Quiz App - Workers Static Assets 用設定
+# ============================================================
+# 通常は使いません。Cloudflare PagesではなくWorkersで運用したい場合だけ使用。
+# deploy例：npx wrangler deploy --config wrangler.worker.toml
+# ============================================================
+
+name = "me2-json-quiz-worker"
+compatibility_date = "2026-05-31"
+main = "./src/worker.js"
+
+[assets]
+directory = "."
+binding = "WORKER_ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = true
+
+[vars]
+GITHUB_OWNER = "YOUR_GITHUB_USER"
+GITHUB_REPO = "ME2_JSON_App"
+GITHUB_BRANCH = "main"
+GITHUB_ROOT = ""
+
+# [[kv_namespaces]]
+# binding = "ME2_PROGRESS"
+# id = "YOUR_KV_NAMESPACE_ID"
