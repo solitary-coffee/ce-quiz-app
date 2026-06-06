@@ -11,6 +11,26 @@
         "am": "Date/Ques/39_am.json",
         "pm": "Date/Ques/39_pm.json"
       }
+    },
+    {
+      "id": "38",
+      "title": "第38回",
+      "subtitle": "臨床工学技士国家試験",
+      "questionCount": 90,
+      "parts": {
+        "am": "Date/Ques/38_am.json",
+        "pm": "Date/Ques/38_pm.json"
+      }
+    },
+    {
+      "id": "37",
+      "title": "第37回",
+      "subtitle": "臨床工学技士国家試験",
+      "questionCount": 90,
+      "parts": {
+        "am": "Date/Ques/37_am.json",
+        "pm": "Date/Ques/37_pm.json"
+      }
     }
   ]
 }
