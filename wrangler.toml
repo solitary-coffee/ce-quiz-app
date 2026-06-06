@@ -6,13 +6,13 @@
 # Pages では functions/api/*.js が自動的に /api/* として動きます。
 # ============================================================
 
-name = "me2-quiz-app"
+name = "ce-quiz-app"
 compatibility_date = "2026-05-31"
 pages_build_output_dir = "."
 
 [vars]
 GITHUB_OWNER = "solitary-coffee"
-GITHUB_REPO = "me2-quiz-app"
+GITHUB_REPO = "ce-quiz-app"
 GITHUB_BRANCH = "main"
 GITHUB_ROOT = ""
 
