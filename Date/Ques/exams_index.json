@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "ce-national-quiz-index-v1",
+  "updatedAt": "2026-06-06",
+  "exams": [
+    {
+      "id": "39",
+      "title": "第39回",
+      "subtitle": "臨床工学技士国家試験",
+      "questionCount": 90,
+      "parts": {
+        "am": "Date/Ques/39_am.json",
+        "pm": "Date/Ques/39_pm.json"
+      }
+    }
+  ]
+}
