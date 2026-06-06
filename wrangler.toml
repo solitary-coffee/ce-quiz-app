@@ -21,7 +21,7 @@ GITHUB_ROOT = ""
 # 既存の ME2 用KVと分けるため、Binding name は CE_PROGRESS を使用します。
 [[kv_namespaces]]
 binding = "CE_PROGRESS"
-id = "CE_PROGRESS_KV_NAMESPACE_ID"
+id = "95ac8924673a45a8b7de2db7e3abfc86"
 
 
 # ------------------------------------------------------------
