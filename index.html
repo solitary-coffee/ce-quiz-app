@@ -300,6 +300,8 @@ html[data-theme="dark"] .top-hero-actions,html[data-theme="dark"] .top-status>di
 .menu-classic{padding:18px}
 .classic-action-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
 .classic-action-row button{min-height:42px}
+.classic-action-row .me2-link-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 16px;border-radius:16px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;text-decoration:none;font-size:15px;font-weight:900;box-shadow:0 4px 12px rgba(22,163,74,.18)}
+.classic-action-row .me2-link-button:hover{filter:brightness(.98);transform:translateY(-1px)}
 .classic-status{margin:10px 0 14px}
 .classic-info-details{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:0;margin:14px 0;overflow:hidden}
 .classic-info-details>summary{cursor:pointer;padding:13px 15px;font-weight:900;color:var(--accent);display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -312,7 +314,7 @@ html[data-theme="dark"] .top-hero-actions,html[data-theme="dark"] .top-status>di
 html[data-theme="dark"] .classic-info-details{background:#0f172a;border-color:#334155}
 @media(max-width:760px){
   .menu-classic{padding:14px}
-  .classic-action-row button{flex:1 1 calc(50% - 8px)}
+  .classic-action-row button,.classic-action-row .me2-link-button{flex:1 1 calc(50% - 8px)}
   .classic-action-row .pill{width:100%;justify-content:center}
   .menu-classic .random-actions button{width:100%}
 }
@@ -786,6 +788,7 @@ details.dev-pr-panel:not([open]){
   <div class="classic-action-row">
     <button class="ghost" onclick="showLoginInfo()">ログイン / 登録</button>
     <span class="pill" id="roundCount">読み込み中</span>
+    <a class="me2-link-button" href="https://me2.dpi-bot.com/" target="_blank" rel="noopener" aria-label="ME2種版の過去問演習サイトを開く">ME2種版はこちら！！</a>
   </div>
 
   <details class="classic-info-details">
