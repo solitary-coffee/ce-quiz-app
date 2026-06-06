@@ -31,8 +31,8 @@ async function sessionKey(token) {
 }
 
 async function verifyDevSession(context) {
-  const kv = context.env.ME2_PROGRESS;
-  if (!kv) return { ok: false, error: 'ME2_PROGRESS KV binding が未設定です。' };
+  const kv = context.env.CE_PROGRESS;
+  if (!kv) return { ok: false, error: 'CE_PROGRESS KV binding が未設定です。' };
 
   const token = context.request.headers.get('X-ME2-Dev-Session') || '';
   if (!token) return { ok: false, error: '開発者ログインが必要です。' };

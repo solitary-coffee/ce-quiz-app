@@ -1,0 +1,22 @@
+{
+  "update": "Cloudflare KV binding rename",
+  "oldBinding": "ME2_PROGRESS",
+  "newBinding": "CE_PROGRESS",
+  "changedFiles": [
+    "functions/api/ai-explain.js",
+    "functions/api/auth.js",
+    "functions/api/dev-auth.js",
+    "functions/api/github-pr.js",
+    "functions/api/me.js",
+    "functions/api/progress.js",
+    "src/worker.js",
+    "User_deta/README.txt",
+    "wrangler.toml",
+    "wrangler.worker.toml"
+  ],
+  "cloudflareRequiredBinding": {
+    "variableName": "CE_PROGRESS",
+    "type": "KV namespace"
+  },
+  "note": "Cloudflare Pages の Settings > Functions > KV namespace bindings で Variable name を CE_PROGRESS にしてください。wrangler.toml の KV id は環境ごとに異なるため、CLI 管理する場合のみ実際の CE_PROGRESS 用 namespace id に差し替えてコメント解除してください。"
+}

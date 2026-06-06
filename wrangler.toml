@@ -18,9 +18,10 @@ GITHUB_ROOT = ""
 
 # KVをwrangler.tomlで管理する場合だけ、idを入れてコメント解除してください。
 # Dashboardの Pages > Settings > Bindings で設定する場合は、このままでOKです。
-[[kv_namespaces]]
-binding = "ME2_PROGRESS"
-id = "20aa48fc63bb41bc90c0efa5abc3ac37"
+# 既存の ME2 用KVと分けるため、Binding name は CE_PROGRESS を使用します。
+# [[kv_namespaces]]
+# binding = "CE_PROGRESS"
+# id = "YOUR_CE_PROGRESS_KV_NAMESPACE_ID"
 
 
 # ------------------------------------------------------------

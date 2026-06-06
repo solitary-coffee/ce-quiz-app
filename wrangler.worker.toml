@@ -22,5 +22,5 @@ GITHUB_BRANCH = "main"
 GITHUB_ROOT = ""
 
 # [[kv_namespaces]]
-# binding = "ME2_PROGRESS"
+# binding = "CE_PROGRESS"
 # id = "YOUR_KV_NAMESPACE_ID"

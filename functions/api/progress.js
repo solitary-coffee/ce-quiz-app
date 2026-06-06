@@ -75,8 +75,8 @@ function newAttemptId() {
 }
 async function bodyJson(request) { try { return await request.json(); } catch (_) { return {}; } }
 async function requireAccountAndKv(context) {
-  if (!context.env.ME2_PROGRESS) return { error: Response.json({ error: 'ME2_PROGRESS KV binding is not configured' }, { status: 500 }) };
-  const kv = context.env.ME2_PROGRESS;
+  if (!context.env.CE_PROGRESS) return { error: Response.json({ error: 'CE_PROGRESS KV binding is not configured' }, { status: 500 }) };
+  const kv = context.env.CE_PROGRESS;
   const account = await getAccount(context.request, kv);
   if (!account) return { error: Response.json({ error: 'site login, guest login, or Cloudflare Access login required' }, { status: 401 }) };
   return { account, kv };

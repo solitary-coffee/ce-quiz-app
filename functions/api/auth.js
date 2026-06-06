@@ -125,8 +125,8 @@ async function createSession(kv, account) {
   return { sessionToken, sessionExpiresAt };
 }
 async function handlePost(context) {
-  const kv = context.env.ME2_PROGRESS;
-  if (!kv) return json({ error: 'ME2_PROGRESS KV binding が未設定です。Cloudflare Pages の設定で KV を紐付けてください。' }, { status: 503 });
+  const kv = context.env.CE_PROGRESS;
+  if (!kv) return json({ error: 'CE_PROGRESS KV binding が未設定です。Cloudflare Pages の設定で KV を紐付けてください。' }, { status: 503 });
 
   const body = await bodyJson(context.request);
   const action = String(body.action || 'login');
@@ -189,8 +189,8 @@ async function handlePost(context) {
   return json({ error: 'unknown action' }, { status: 400 });
 }
 async function handleGet(context) {
-  const kv = context.env.ME2_PROGRESS;
-  if (!kv) return json({ authenticated: false, error: 'ME2_PROGRESS KV binding が未設定です。' }, { status: 200 });
+  const kv = context.env.CE_PROGRESS;
+  if (!kv) return json({ authenticated: false, error: 'CE_PROGRESS KV binding が未設定です。' }, { status: 200 });
   const loginId = safeLoginId(context.request.headers.get('X-ME2-Login-Id') || context.request.headers.get('x-me2-login-id'));
   const token = context.request.headers.get('X-ME2-Session-Token') || context.request.headers.get('x-me2-session-token') || '';
   if (!loginId || !token) return json({ authenticated: false });

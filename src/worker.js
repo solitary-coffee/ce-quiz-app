@@ -72,26 +72,26 @@ async function handleGithub(request, env) {
 async function handleProgress(request, env) {
   const email = getEmail(request);
   if (!email) return responseJson({ error: 'login required' }, { status: 401 });
-  if (!env.ME2_PROGRESS) return responseJson({ error: 'ME2_PROGRESS KV binding is not configured' }, { status: 500 });
+  if (!env.CE_PROGRESS) return responseJson({ error: 'CE_PROGRESS KV binding is not configured' }, { status: 500 });
   const url = new URL(request.url);
   if (request.method === 'GET') {
     const type = url.searchParams.get('type') || 'state';
     const examId = url.searchParams.get('examId') || '';
     const part = url.searchParams.get('part') || '';
     if (!examId || !part) return responseJson({ ok: true, authenticated: true, cloudSave: true });
-    const data = await env.ME2_PROGRESS.get(kvKey(email, type, examId, part), 'json');
+    const data = await env.CE_PROGRESS.get(kvKey(email, type, examId, part), 'json');
     return responseJson({ ok: true, data });
   }
   if (request.method === 'POST') {
     const body = await bodyJson(request);
     if (!body.type || !body.examId || !body.part) return responseJson({ error: 'type, examId, part are required' }, { status: 400 });
-    await env.ME2_PROGRESS.put(kvKey(email, body.type, body.examId, body.part), JSON.stringify(body.data ?? null));
+    await env.CE_PROGRESS.put(kvKey(email, body.type, body.examId, body.part), JSON.stringify(body.data ?? null));
     return responseJson({ ok: true });
   }
   if (request.method === 'DELETE') {
     const body = await bodyJson(request);
     if (!body.type || !body.examId || !body.part) return responseJson({ error: 'type, examId, part are required' }, { status: 400 });
-    await env.ME2_PROGRESS.delete(kvKey(email, body.type, body.examId, body.part));
+    await env.CE_PROGRESS.delete(kvKey(email, body.type, body.examId, body.part));
     return responseJson({ ok: true });
   }
   return responseJson({ error: 'method not allowed' }, { status: 405 });

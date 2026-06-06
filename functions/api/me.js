@@ -26,7 +26,7 @@ async function getSiteAccount(request, kv) {
 }
 export async function onRequestGet(context) {
   const { request } = context;
-  const site = await getSiteAccount(request, context.env.ME2_PROGRESS);
+  const site = await getSiteAccount(request, context.env.CE_PROGRESS);
 
   const jwt = request.headers.get('Cf-Access-Jwt-Assertion') || request.headers.get('CF-Access-Jwt-Assertion') || '';
   const payload = decodeJwtPayload(jwt);
@@ -55,6 +55,6 @@ export async function onRequestGet(context) {
     access: { authenticated: Boolean(email), email, name: payload.name || payload.given_name || null, sub: payload.sub || null, aud: payload.aud || null },
     email,
     name: payload.name || payload.given_name || null,
-    kvConfigured: Boolean(context.env.ME2_PROGRESS),
+    kvConfigured: Boolean(context.env.CE_PROGRESS),
   }, { headers: { 'cache-control': 'no-store' } });
 }

@@ -44,10 +44,10 @@ async function sessionKey(token) {
 }
 async function handlePost(context) {
   const env = context.env || {};
-  const kv = env.ME2_PROGRESS;
+  const kv = env.CE_PROGRESS;
 
   if (!kv) {
-    return json({ error: 'ME2_PROGRESS KV binding が未設定です。Cloudflare Pages の Functions/Bindings で ME2_PROGRESS を設定してください。' }, { status: 503 });
+    return json({ error: 'CE_PROGRESS KV binding が未設定です。Cloudflare Pages の Functions/Bindings で CE_PROGRESS を設定してください。' }, { status: 503 });
   }
   if (!configured(env)) {
     return json({ error: '開発者用の環境変数 ME2_DEV_ID と ME2_DEV_PASSWORD または ME2_DEV_PASSWORD_HASH を設定してください。' }, { status: 503 });
@@ -85,9 +85,9 @@ async function handlePost(context) {
 }
 async function handleGet(context) {
   const env = context.env || {};
-  const kv = env.ME2_PROGRESS;
+  const kv = env.CE_PROGRESS;
 
-  if (!kv) return json({ ok: false, error: 'ME2_PROGRESS KV binding が未設定です。' }, { status: 503 });
+  if (!kv) return json({ ok: false, error: 'CE_PROGRESS KV binding が未設定です。' }, { status: 503 });
   if (!configured(env)) return json({ ok: false, error: '開発者用環境変数が未設定です。' }, { status: 503 });
 
   const token = context.request.headers.get('X-ME2-Dev-Session') || '';
